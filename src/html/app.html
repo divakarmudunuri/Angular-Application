@@ -1,0 +1,18 @@
+<header class="container pt-3">
+  <nav class="navbar navbar-expand-lg p-0">
+    <a routerLink="/" class="navbar-brand" (click)="menuCollapsed = true"><img src="logo.svg" alt="Sri Insurance" height="48" /></a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="menuCollapsed = !menuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse mt-3 mt-lg-0 ms-lg-4 align-self-end" [ngbCollapse]="menuCollapsed">
+      <ul ngbNav [activeId]="activeTab()" class="nav-tabs flex-grow-1">
+        @for (tab of tabs; track tab.path) {
+          <li [ngbNavItem]="tab.path"><a ngbNavLink [routerLink]="tab.path" (click)="menuCollapsed = true">{{ tab.label }}</a></li>
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+<main class="container py-4">
+  <router-outlet />
+</main>

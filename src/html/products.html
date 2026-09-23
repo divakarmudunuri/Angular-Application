@@ -1,0 +1,18 @@
+<h2 class="text-center mb-4">Explore insurance products we offer for you</h2>
+@if (audiences.error()) {
+  <div class="alert alert-danger">Unable to load products. Is the API server running?</div>
+} @else {
+  <div class="row g-4">
+    @for (a of audiences.value(); track a.id) {
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h4 text-primary">{{ a.name }}</h3>
+            <p class="card-text flex-grow-1">{{ a.description }}</p>
+            <a class="btn btn-outline-primary" [routerLink]="a.id">See plans</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48">
+  <path d="M24 4 L42 10 V24 C42 35 34 42 24 45 C14 42 6 35 6 24 V10 Z" fill="#0d6efd"/>
+  <path d="M16 24 L22 30 L33 18" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="31" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#0d6efd">Sri <tspan fill="#212529" font-weight="400">Insurance</tspan></text>
+</svg>

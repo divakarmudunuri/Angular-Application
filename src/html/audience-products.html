@@ -1,0 +1,46 @@
+<a routerLink="/insurance-products" class="d-inline-block mb-3">&larr; All products</a>
+@if (audience.error()) {
+  <div class="alert alert-warning">Product group not found.</div>
+} @else if (audience.value(); as a) {
+  @let plans = products.hasValue() ? products.value() : [];
+  <section class="p-4 mb-4 bg-light rounded-3">
+    <h2>{{ a.name }}</h2>
+    <p class="lead">{{ a.description }}</p>
+    <button class="btn btn-primary">Get a Quote</button>
+  </section>
+
+  <h3 class="mb-3">Available plans</h3>
+  <div class="row g-4 mb-5">
+    @for (p of plans; track p.id) {
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <span class="badge text-bg-secondary mb-2">{{ p.planType }}</span>
+            <h4 class="card-title h5">{{ p.name }}</h4>
+            <p class="card-text">{{ p.description }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <h3 class="mb-3">Compare plans</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light">
+        <tr>
+          <th></th>
+          @for (p of plans; track p.id) { <th>{{ p.name }}</th> }
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th>Plan type</th>@for (p of plans; track p.id) { <td>{{ p.planType }}</td> }</tr>
+        <tr><th>Network size</th>@for (p of plans; track p.id) { <td>{{ p.networkSize }}</td> }</tr>
+        <tr><th>Monthly premium</th>@for (p of plans; track p.id) { <td>{{ p.monthlyPremium | currency: 'USD' : 'symbol' : '1.0-0' }}</td> }</tr>
+        <tr><th>Deductible</th>@for (p of plans; track p.id) { <td>{{ p.deductible ? (p.deductible | currency: 'USD' : 'symbol' : '1.0-0') : 'None' }}</td> }</tr>
+        <tr><th>Copay</th>@for (p of plans; track p.id) { <td>{{ p.copay === null ? 'Not applicable' : (p.copay | currency: 'USD' : 'symbol' : '1.0-0') }}</td> }</tr>
+        <tr><th>Coverage</th>@for (p of plans; track p.id) { <td>{{ p.coverage === null ? 'Discounts only' : (p.coverage | currency: 'USD' : 'symbol' : '1.0-0') }}</td> }</tr>
+      </tbody>
+    </table>
+  </div>
+}
