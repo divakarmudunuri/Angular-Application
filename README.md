@@ -84,4 +84,4 @@ See [docs/testing.md](docs/testing.md) for filtering, coverage and how the tests
 | `local-api-server/app.js` | Express routes and sample data |
 | `local-api-server/server.js` | Starts the API on `PORT` |
 | `local-api-server/tests/` | API tests |
-| `docs/` | [Architecture](docs/architecture.md), [sequence](docs/sequence-diagram.md), [routing](docs/routing.md), [lazy loading](docs/lazy-loading.md), [testing](docs/testing.md), [unit test examples](docs/unit-test-examples.md), [coverage](docs/coverage.md), [dependency injection](docs/dependency-injection.md) and [decorators](docs/decorators.md) docs |
+| `docs/` | [Architecture](docs/architecture.md), [sequence](docs/sequence-diagram.md), [routing](docs/routing.md), [lazy loading](docs/lazy-loading.md), [testing](docs/testing.md), [unit test examples](docs/unit-test-examples.md), [coverage](docs/coverage.md), [dependency injection](docs/dependency-injection.md), [decorators](docs/decorators.md), [Angular 19+ interview questions](docs/angular-interview-questions.md), [implemented](docs/implemented.md) and [not implemented yet](docs/not-implemented.md) docs |
